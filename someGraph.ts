@@ -13,6 +13,7 @@ const nodes = [
     new Node('J'), // 9
 ]
 
+
 nodes[0].addNode(nodes[1]);
 nodes[0].addNode(nodes[3]);
 
@@ -20,8 +21,8 @@ nodes[1].addNode(nodes[0]);
 nodes[1].addNode(nodes[4]);
 
 nodes[2].addNode(nodes[3]);
-nodes[2].addNode(nodes[4]);
 nodes[2].addNode(nodes[5]);
+nodes[2].addNode(nodes[4]);
 
 nodes[3].addNode(nodes[0]);
 nodes[3].addNode(nodes[2]);
@@ -49,7 +50,9 @@ nodes[8].addNode(nodes[5]);
 
 nodes[9].addNode(nodes[7]);
 
+const nodesHash: Record<string, Node> = {};
+nodes.forEach(node => nodesHash[node.key] = node);
 
-
+export default nodesHash;
 
 
